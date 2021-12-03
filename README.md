@@ -3,4 +3,4 @@ An API that allows users to get information on various movies, directors, and ge
 
 # techonologies used:
 
-Node, JS, HTML, 
+Node, JS, HTML, Json,
