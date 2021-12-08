@@ -7,13 +7,167 @@
   </head>
 
   <body>
-    <h1>Movie API Documentation</h1>
-    <h2>This is an API that will eventually become quite useful</h2>
-    <p>
-      This API will provide users with access to information about different
-      movies, directors, and genres. Users will be able to sign up, update their
-      personal information and create a list of their favorite movies.
-    </p>
+    <table>
+      <thead>
+        <Tr>
+          <th>
+            REQUEST
+          </th>
+          <th>
+            URL
+          </th>
+          <th>
+            HTTP METHOD
+          </th>
+          <th>
+            RESPONSE
+          </th>
+        </Tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Return All Movies
+          </td>
+          <Td>
+            "/movies"
+          </Td>
+          <td>
+            GET
+          </td>
+          <td>
+            Returns an array of all JSON movie objects in database
+          </td>
+        </tr>
+        <tr>
+          <Td>
+            Return single movie data
+          </Td>
+          <Td>
+            "/movies/:title"
+          </Td>
+          <td>
+            GET
+          </td>
+          <td>
+            Returns JSON object returning the data (description,director,genre etc.) of a single movie
+            <br />
+            EXAMPLE: <br />
+            <code>{
+    "title": "Ghostbusters",<br />
+    "released": "1984",<br />
+    "genre": [<br />
+        "action",<br />
+        "sci-fi"<br />
+    ],<br />
+    "director": {<br />
+        "name": "Ivan Reitman",<br />
+        "biography": "Placeholder information",<br />
+        "birthdate": "Placeholder date"<br />
+    }<Br />
+}</code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Return data on movie genres
+          </td>
+          <td>
+            "/movies/genre/:genre"
+          </td>
+          <td>
+            GET
+          </td>
+          <td>
+            Returns information on genres via array of JSON movie objects
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Return data of directors
+          </td>
+          <td>
+            "/movies/:directorName"
+          </td>
+          <td>
+            GET
+          </td>
+          <td>
+            Returns JSON object containing information on director based on name
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Register new user
+          </td>
+          <td>
+          "/users"
+          </td>
+          <td>
+            POST
+          </td>
+          <td>
+            A JSON object adding the new user
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Allow users to update their username
+          </td>
+          <tD>
+            "/users/:username"
+          </tD>
+          <td>
+            PUT
+          </td>
+          <td>
+            returns data that was updated by the user
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Allow users to add a movie to their favorites
+          </td>
+          <Td>
+            "/users/add/:movieName"
+          </Td>
+          <td>
+            POST
+          </td>
+          <td>
+            Returns text that a movie was added successfully
+          </td>
+        </tr>
+        <tr>
+          <tD>
+            Allow users to remove a movie from their favorites
+          </tD>
+          <td>
+            "/users/remove/:movieName"
+          </td>
+          <td>
+            DELETE
+          </td>
+          <td>
+          Returns text that a movie was removed successfully.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Allow users to delete their account
+          </td>
+          <Td>
+            "users/deleteAccount"
+          </Td>
+          <td>
+            DELETE
+          </td>
+          <td>
+            Returns text that account was successfully deleted.
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
     <!-- <script src="server.js"></script> -->
   </body>
