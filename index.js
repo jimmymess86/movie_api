@@ -130,7 +130,7 @@ app.get('/movies', (req, res) => {
        if(movie) {
            res.status(200).json(movie)
        } else {
-           res.status(400).send('No movie with that title is found')
+           res.status(404).send('Movie not found')
        }
    });
 
@@ -152,7 +152,7 @@ app.get('/movies', (req, res) => {
        if(director) {
            res.status(200).json(director)
        } else {
-           res.status(400).send('No director with that name is found')
+           res.status(404).send('Director not found')
        }
    });
 
@@ -160,9 +160,9 @@ app.get('/movies', (req, res) => {
        let user = req.body
 
        if(user.username) {
-           res.status(200).json(user)
+           res.status(201).json(user)
        } else {
-           res.status(400).send('Valid user info was not passed in')
+           res.status(400).send('Invalid user info')
        }
    });
 
@@ -182,7 +182,7 @@ app.get('/movies', (req, res) => {
            favorites.push(req.params.movieName)
            res.status(200).send(`${req.params.movieName} has been added to your favorites`);
        } else {
-           res.status(400).send('Cannot find movie with that name');
+           res.status(400).send('Movie was not added');
        }
    });
 
