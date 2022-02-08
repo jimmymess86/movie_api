@@ -187,7 +187,7 @@ Birthday: Date
 app.put('/users/:Username', (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
-      Username: req.body.Username,
+      Username: req.params.Username,
       Password: req.body.Password,
       Email: req.body.Email,
       Birthday: req.body.Birthday
