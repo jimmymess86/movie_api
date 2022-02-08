@@ -12,50 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
-//mongoose.connect('mongodb+srv://jimmymac:Frankie1!@cluster0.us5ha.mongodb.net/test', { userNewUrlParser: true, useUnifiedTopology: true});
 
-/* let myMovies = [
-{
-title: "Ghostbusters",
-director: "Ivan Reitman"
-},
-{
-title: "Young Frankenstein",
-director: "Mel Brooks"
-},
-{
-title: "Star Wars",
-director: "George Lucas"
-},
-{
-title: "Star Trek IV: The Voyage Home",
-director: "Leonard Nimoy"
-},
-{
-title: "Jaws",
-director: "Steven Spielberg"
-},
-{
-title: "Avengers: Endgame",
-director: "The Russo Brothers"
-},
-{
-title: "The Godfather",
-director: "Francis Ford Coppola"
-},
-{
-title: "The Godfather, Part II",
-director: "Francis Ford Coppola"
-},
-{
-title: "The Shawkshank Redemption",
-direcotr: "Frank Darabont"
-},
-{
-title: "Ace Ventura: When Nature Calls",
-director: "Steve Odekerk"
-}
-]; */
 
 app.use(morgan("common")); //use morgan to log errors/data to terminal
 app.use(express.static("public")); //use static to serve documentation.html
