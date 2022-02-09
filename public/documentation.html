@@ -1,174 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Movie API</title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie API</title>
+</head>
 
-  <body>
-    <table>
-      <thead>
-        <Tr>
-          <th>
-            REQUEST
-          </th>
-          <th>
-            URL
-          </th>
-          <th>
-            HTTP METHOD
-          </th>
-          <th>
-            RESPONSE
-          </th>
-        </Tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            Return All Movies
-          </td>
-          <Td>
-            "/movies"
-          </Td>
-          <td>
-            GET
-          </td>
-          <td>
-            Returns an array of all JSON movie objects in database
-          </td>
-        </tr>
-        <tr>
-          <Td>
-            Return single movie data
-          </Td>
-          <Td>
-            "/movies/:title"
-          </Td>
-          <td>
-            GET
-          </td>
-          <td>
-            Returns JSON object returning the data (description,director,genre etc.) of a single movie
-            <br />
-            EXAMPLE: <br />
-            <code>{
-    "title": "Ghostbusters",<br />
-    "released": "1984",<br />
-    "genre": [<br />
-        "action",<br />
-        "sci-fi"<br />
-    ],<br />
-    "director": {<br />
-        "name": "Ivan Reitman",<br />
-        "biography": "Placeholder information",<br />
-        "birthdate": "Placeholder date"<br />
-    }<Br />
-}</code>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Return data on movie genres
-          </td>
-          <td>
-            "/movies/genre/:genre"
-          </td>
-          <td>
-            GET
-          </td>
-          <td>
-            Returns information on genres via array of JSON movie objects
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Return data of directors
-          </td>
-          <td>
-            "/movies/:directorName"
-          </td>
-          <td>
-            GET
-          </td>
-          <td>
-            Returns JSON object containing information on director based on name
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Register new user
-          </td>
-          <td>
-          "/users"
-          </td>
-          <td>
-            POST
-          </td>
-          <td>
-            A JSON object adding the new user
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Allow users to update their username
-          </td>
-          <tD>
-            "/users/:username"
-          </tD>
-          <td>
-            PUT
-          </td>
-          <td>
-            returns data that was updated by the user
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Allow users to add a movie to their favorites
-          </td>
-          <Td>
-            "/users/add/:movieName"
-          </Td>
-          <td>
-            POST
-          </td>
-          <td>
-            Returns text that a movie was added successfully
-          </td>
-        </tr>
-        <tr>
-          <tD>
-            Allow users to remove a movie from their favorites
-          </tD>
-          <td>
-            "/users/remove/:movieName"
-          </td>
-          <td>
-            DELETE
-          </td>
-          <td>
-          Returns text that a movie was removed successfully.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Allow users to delete their account
-          </td>
-          <Td>
-            "users/deleteAccount"
-          </Td>
-          <td>
-            DELETE
-          </td>
-          <td>
-            Returns text that account was successfully deleted.
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<body>
+  <table>
+    <thead>
+      <Tr>
+        <th>BUSINESS LOGIC</th>
+        <th>URL</th>
+        <th>HTTP METHOD</th>
+        <th>RESPONSE</th>
+        <th>EXAMPLE
+      </Tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Return All Movies</td>
+        <Td>"/movies"</Td>
+        <td>GET</td>
+        <td>Returns a JSON list movies.</td>
+      </tr>
+      <tr>
+        <Td>Return single movie data</Td>
+        <Td>"/movies/:title"</Td>
+        <td>GET</td>
+        <td>Returns JSON object returning the data (description,director,genre etc.) of a single movie</td>
+        <td>"Genre": {<br />
+            "Name": "Comedy",<Br />
+            "Description": "is a genre of film in which the main emphasis is on humor"<br />
+        },<br />
+        "Director": {<Br />
+            "Name": "Ivan Reitman",<Br />
+            "Bio": "is a Canadian film and television director, producer and screenwriter. He is best known for his comedy work, especially in the 1980s. ",<Br />
+            "Birth": "1946-10-27"<br />
+        },<Br />
+        "Actors": [],<Br />
+        "_id": "61b67563da9a99175992da0c",<br />
+        "Title": "Ghostbusters",<Br />
+        "Description": "Three parapsychologists forced out of their university funding set up shop as a unique ghost removal service in New York City, attracting frightened yet skeptical customers.",<br />
+        "ImagePath": "ghostbusters.png",<br />
+        "Featured": true<br />
+    }</td>
+      </tr>
+      <tr>
+        <td>Return data on movie genres</td>
+        <td>"/movies/genre/:genre"</td>
+        <td>GET</td>
+        <td>Returns information on genres via array of JSON movie objects</td>
+        <td>"Genre": {<br />
+            "Name": "Comedy",<br />
+            "Description": "is a genre of film in which the main emphasis is on humor"
+        }</td>
+      </tr>
+      <tr>
+        <td>Return data of directors</td>
+        <td>"/movies/:directorName"</td>
+        <td>GET</td>
+        <td>Returns JSON object containing information on director based on name</td>
+        <td>{<Br />
+    "Name": "Ivan Reitman",<Br />
+    "Bio": "is a Canadian film and television director, producer and screenwriter. He is best known for his comedy work, especially in the 1980s. ",<Br />
+    "Birth": "1946-10-27"<br />
+}</td>
+      </tr>
+      <tr>
+        <td>Register new user</td>
+        <td>"/users"</td>
+        <td>POST</td>
+        <td>A JSON object adding the new user</td>
+        <td>userName: xxxxx, <br />
+          password: xxxxxx, <br />
+          email: xxxxxx, <br />
+          Birthday: MM/DD/YYYY</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their username</td>
+        <tD>"/users/:username"</tD>
+        <td>PUT</td>
+        <td>returns data that was updated by the user</td>
+        <td>
+          userName: NEW, <br />
+          password: NEw, <br />
+          email: NEW, <br />
+          Birthday: NEW</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their favorites</td>
+        <Td>"/users/add/:movieName"</Td>
+        <td>POST</td>
+        <td>Returns text that a movie was added successfully</td>
+        <td>MOVIE was added to favorites</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their favorites</td>
+        <td>"/users/remove/:movieName"</td>
+        <td>DELETE</td>
+        <td>Returns text that a movie was removed successfully.</td>
+        <td>MOVIE has been removed from favorites</td>
+      </tr>
+      <tr>
+        <td>Allow users to delete their account</td>
+        <Td>"users/deleteAccount"</Td>
+        <td>DELETE</td>
+        <td>Returns text that account was successfully deleted.</td>
+        <TD>USERNAME has been deleted</TD>
+      </tr>
+    </tbody>
+  </table>
 
-    <!-- <script src="server.js"></script> -->
-  </body>
+  <!-- <script src="server.js"></script> -->
+</body>
 </html>
