@@ -1,0 +1,7 @@
+{"_id":{"$oid":"61b67d31da9a99175992da17"},"Username":"billyboy","Password":"whiskytangofoxnew","Email":"billy3434@email.com","Birthday":{"$date":"1991-12-12T00:00:00Z"},"FavoriteMovies":[{"$oid":"61b67718da9a99175992da15"}]}
+{"_id":{"$oid":"61b67d40da9a99175992da18"},"Username":"brenda27","Password":"123445","Email":"brenda27@email.com","Birthday":{"$date":"1979-04-29T00:00:00Z"},"FavoriteMovies":{"$oid":"61b67658da9a99175992da0f"}}
+{"_id":{"$oid":"61b69103da9a99175992da1b"},"Username":"jimmymac","Password":"Dodgers73","Email":"jimmymac@email.com","Birthdy":{"$date":"1986-03-18T00:00:00Z"}}
+{"_id":{"$oid":"6202b8f9bcb364749d14c308"},"Username":"testuser1083","Password":"testpassword300","Email":"email@email.com","FavoriteMovies":[],"__v":0}
+{"_id":{"$oid":"6203f412d66203a1c8c2dd8d"},"Username":"Jeff","Password":"1234","Email":"jeff@@email.com","Birthday":{"$date":"1992-11-12T00:00:00Z"},"FavoriteMovies":[],"__v":0}
+{"_id":{"$oid":"6205495ab25a6065bd7925d9"},"Username":"Jimmy","Password":"4567","Email":"jimmy@@email.com","Birthday":{"$date":"1982-11-12T00:00:00Z"},"FavoriteMovies":[],"__v":0}
+{"_id":{"$oid":"62054c0a99caaa7648bc5ece"},"Username":"Bob","Password":"2345","Email":"bob@email.com","Birthday":{"$date":"1975-01-01T00:00:00Z"},"FavoriteMovies":[],"__v":0}
