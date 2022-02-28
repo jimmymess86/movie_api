@@ -46,29 +46,16 @@ app.get("/", (req, res) => {
 });
 
 // Returns a JSON object with list of all movies
-/*app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
-  .then((movies) => {
-    res.status(201).json(movies);
-  })
-  .catch((err) => {
-    console.error(err);
-    res.status(500).send('Error: ' + err);
-  });
-});*/
-
-//removed authentication while implementing react for client side
-app.get('/movies', function (req, res) {
-  Movies.find()
-    .then(function (movies) {
+    .then((movies) => {
       res.status(201).json(movies);
     })
-    .catch(function (error) {
-      console.error(error);
-      res.status(500).send("Error: " + error);
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
     });
 });
-
 
 // find a movie based on title
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -265,9 +252,9 @@ app.get("/documentation", (req, res) => {
   res.sendFile("public/documentation.html", { root: __dirname });
 });
 
-app.get("/movies", (req, res) => {
-  res.json(myMovies);
-});
+// app.get("/movies", (req, res) => {
+//   res.json(myMovies);
+// });
 
 //error handling middleware
 app.use((err, req, res, next) => {
